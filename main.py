@@ -71,7 +71,7 @@ def register():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        verify = request.form['verify']
+        #verify = request.form['verify']
         
         #TODO: validate the input
 
@@ -95,7 +95,6 @@ def login():
 
     if request.method == 'POST':
         email = request.form['email']
-        e = email
         password = request.form['password']
         user = User.query.filter_by(email=email).first()
 
@@ -126,4 +125,5 @@ def require_login():
 
 
 if __name__ == '__main__':
+    #app.run(host='0.0.0.0', debug=True)
     app.run()
